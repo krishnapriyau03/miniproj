@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service App</title>
+  <link rel="stylesheet" href="/css">
+</head>
+<style>
+  .background{
+    background-image: url('C:\Users\minik\Downloads\miniproject\WhatsApp Image 2024-03-28 at 10.50.33_ad9df2ab.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+<body class="background">
+  <div class="container">
+    <header>
+      <h1>CONNECTME</h1>
+    </header>
+    <main>
+      <form id="loginForm" >
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <div class="cont2">
+        <button id="mybutton">LOGIN</button>
+        
+        <button id="signin">SIGNIN</button>
+        </div>
+        <h2>Dont have an account? Then plz SIGNIN!</h2>
+      </form>
+    </main>
+  </div>
+  <!DOCTYPE html>
+  <script>
+  document.getElementById("mybutton").addEventListener("click", function() {
+    // Replace 'destination.html' with the URL of the page you want to redirect to
+    window.location.href = "/option";
+});
+</script>
+</body>
+</html>

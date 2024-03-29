@@ -1,0 +1,102 @@
+TYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Service</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Choose Your Service</h1>
+    <div class="service-options">
+        <div  class="service-option"  onclick="selectService('indoor')">
+            <button class="button" id="mybutton">Indoor Service</button>
+          
+        </div>
+        <div class="service-option"  onclick="selectService('outdoor')">
+           <button class="button" id="mybutton">Outdoor services</button>
+
+        </div>
+    </div>
+    <div id="selected-service"></div>
+</div>
+<style>
+    .button{
+        
+        width: 300px;
+        height:80px;
+        border-radius: 20px 0px 20px 0;
+        font-size:x-large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .button:hover{
+      background-color:rgb(88, 85, 128);
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9530.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.service-options {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+}
+
+.service-option {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(209, 205, 205);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.service-option:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #eee4e4;
+}
+
+.service-option h2 {
+    margin-bottom: 10px;
+}
+
+.service-option p {
+    color: #555;
+}
+
+#selected-service {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #eee4e4;
+}
+</style>
+<script>
+    
+    document.getElementById("mybutton").addEventListener("click", function() {
+    // Replace 'destination.html' with the URL of the page you want to redirect to
+    window.location.href = "/indoor";
+});
+</script>
+
+</body>
+</html>

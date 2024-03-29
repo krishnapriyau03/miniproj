@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Alignment</title>
+<style>
+  .button {
+    margin-bottom: 5px; /* Adjust margin as needed */
+  }
+</style>
+</head>
+<body>
+  <div class="base">
+    <h1>Indoor services</h1>
+<div id="button-container"></div>
+</div>
+<script src="script.js"></script>
+<style>
+  body,html{
+    background-image: url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9530.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    background-color: rgb(237, 235, 240);
+  }
+  .base{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+    .button{
+         width:150px;
+        padding:15px 32px ;
+        border-radius: 20px;
+        text-align: center;
+        
+        display:flex;
+        font-size: medium;
+        color: black;
+        background-color: rgb(231, 231, 236);
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    .button:hover{
+      background-color:rgb(140, 172, 199);
+    }
+</style>
+</body>
+</html>
+  
+<script>
+  // Array to store elements
+  const buttonNames = ["Babycaretaker", "plumber", "electrcian","delivery"];
+
+// Get the container element
+const buttonContainer = document.getElementById('button-container');
+
+// Iterate over the buttonNames array and create buttons dynamically
+buttonNames.forEach((name, index) => {
+  const button = document.createElement('button');
+  button.textContent = name;
+  button.className = 'button'; // Add the 'button' class
+  button.style.marginRight = '5px'; // Add right margin to separate buttons
+  buttonContainer.appendChild(button);
+});
+  
+</script>
+
+</body>
+</html>
