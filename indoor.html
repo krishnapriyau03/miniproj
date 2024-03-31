@@ -1,74 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Button Alignment</title>
-<style>
-  .button {
-    margin-bottom: 5px; /* Adjust margin as needed */
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: white;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            text-transform: uppercase;
+        }
+
+        .container {
+            position: relative;
+            width: 1150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container .card {
+            position: relative;
+            width: 300px;
+            height: 420px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            transition: 0.5s;
+        }
+
+        .container:hover .card {
+            filter: blur(0px);
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .container .card:hover {
+            filter: blur(0px);
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .container .card .circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            clip-path: circle(180px at center 0);
+            text-align: center;
+        }
+
+        .container .card .circle h2 {
+            color: #fff;
+            font-size: 3.5em;
+            padding: 30px 0;
+        }
+
+        .container .card .content {
+            position: absolute;
+            bottom: 10px;
+            padding: 20px;
+            page-break-after: 20px;
+            text-align: center;
+        }
+
+        .container .card .content p {
+            color: #666;
+        }
+
+        .container .card .content a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    .container .card .content .button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer; /* Add cursor style */
+        }
+
+        .container .card:nth-child(1) .circle,
+        .container .card:nth-child(1) .content a {
+            background: #ffaf00;
+        }
+
+        .container .card:nth-child(2) .circle,
+        .container .card:nth-child(2) .content a {
+            background: #da2268;
+        }
+
+        .container .card:nth-child(3) .circle,
+        .container .card:nth-child(3) .content a {
+            background: #bb02ff;
+        }
+
+        .Indoor {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .Indoor h1 {
+            text-transform: uppercase;
+        }
+    </style>
+    <title>Responsive Cards</title>
 </head>
 <body>
-  <div class="base">
-    <h1>Indoor services</h1>
-<div id="button-container"></div>
-</div>
-<script src="script.js"></script>
-<style>
-  body,html{
-    background-image: url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9530.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% ;
-    background-color: rgb(237, 235, 240);
-  }
-  .base{
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    <div class="Indoor">
+        <h1>Indoor services</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="circle">
+                <h2></h2>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="book-now-button">Book Now</button>
+             </div>
+        </div>
+        <div class="card">
+            <div class="circle">
+                <h2></h2>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="book-now-button">Book Now</button>
+             </div>
+ 
+        </div>
+        <div class="card">
+            <div class="circle">
+                <h2></h2>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="book-now-button">Book Now</button>
+            </div>
+        </div>
+        <!-- Additional card -->
+        <div class="card">
+            <div class="circle">
+                <h2></h2>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="book-now-button">Book Now</button>
+            </div>
+        </div>
+    </div> 
 
-  }
-  
-    .button{
-         width:150px;
-        padding:15px 32px ;
-        border-radius: 20px;
-        text-align: center;
+    <script>
+        // Array to store service names
+        const serviceNames = ["Babycare", "Plumber", "Electrician", "Delivery"];
         
-        display:flex;
-        font-size: medium;
-        color: black;
-        background-color: rgb(231, 231, 236);
-        flex-direction: column;
-        align-items: flex-start;
-        
-    }
-    .button:hover{
-      background-color:rgb(140, 172, 199);
-    }
-</style>
-</body>
-</html>
-  
-<script>
-  // Array to store elements
-  const buttonNames = ["Babycaretaker", "plumber", "electrcian","delivery"];
+        // Select all h2 elements inside the circles
+        const h2Elements = document.querySelectorAll('.circle h2');
 
-// Get the container element
-const buttonContainer = document.getElementById('button-container');
-
-// Iterate over the buttonNames array and create buttons dynamically
-buttonNames.forEach((name, index) => {
-  const button = document.createElement('button');
-  button.textContent = name;
-  button.className = 'button'; // Add the 'button' class
-  button.style.marginRight = '5px'; // Add right margin to separate buttons
-  buttonContainer.appendChild(button);
-});
-  
-</script>
-
+        // Iterate through the h2 elements and replace their text with service names
+        h2Elements.forEach((element, index) => {
+            element.textContent = serviceNames[index];
+        });
+    </script>
 </body>
 </html>
