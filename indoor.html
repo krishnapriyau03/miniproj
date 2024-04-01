@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <style>
+        /* Additional CSS properties */
+        /* Your CSS styles here */
+        .navbar-color {
+            background-color: #4682B4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar-color .nav-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-color .left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-color .left a:hover {
+            color: lightgray;
+        }
+
+        .navbar-color .logo img {
+            height: 40px; /* Adjust height as needed */
+        }
+
+        /* Existing CSS styles */
         * {
             margin: 0;
             padding: 0;
@@ -36,6 +67,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .container .card {
@@ -89,7 +121,7 @@
             color: #666;
         }
 
-        .container .card .content a {
+        .container .card .content .book-now-button {
             position: relative;
             display: inline-block;
             padding: 10px 20px;
@@ -98,17 +130,7 @@
             border-radius: 40px;
             text-decoration: none;
             margin-top: 20px;
-        }
-    .container .card .content .button {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    border-radius: 40px;
-    text-decoration: none;
-    margin-top: 20px;
-    cursor: pointer; /* Add cursor style */
+            cursor: pointer;
         }
 
         .container .card:nth-child(1) .circle,
@@ -126,73 +148,110 @@
             background: #bb02ff;
         }
 
-        .Indoor {
-            text-align: center;
-            margin-top: 20px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
-
-        .Indoor h1 {
-            text-transform: uppercase;
+        header .brand-logo {
+            color: rgb(15, 15, 15);
+            font-size: 24px;
+            text-decoration: none;
+        }
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header ul li {
+            margin-right: 20px;
+        }
+        header ul li a {
+            filter: blur(0px);
+            transform: scale(0.9);
+            opacity: 0.5;
+            color: #000;
+        }
+        header ul li a:hover {
+            filter: blur(0px);
+            transform: scale(1.1);
+            opacity: 1;
+            color: #000;
         }
     </style>
     <title>Responsive Cards</title>
 </head>
 <body>
+    <header>
+        <a href="#" class="brand-logo">Logo</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="Indoor">
         <h1>Indoor services</h1>
     </div>
     <div class="container">
-        <div class="card">
-            <div class="circle">
-                <h2></h2>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="book-now-button">Book Now</button>
-             </div>
-        </div>
-        <div class="card">
-            <div class="circle">
-                <h2></h2>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="book-now-button">Book Now</button>
-             </div>
- 
-        </div>
-        <div class="card">
-            <div class="circle">
-                <h2></h2>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="book-now-button">Book Now</button>
-            </div>
-        </div>
-        <!-- Additional card -->
-        <div class="card">
-            <div class="circle">
-                <h2></h2>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="book-now-button">Book Now</button>
-            </div>
-        </div>
+        <!-- Card views will be dynamically added here -->
     </div> 
 
     <script>
         // Array to store service names
         const serviceNames = ["Babycare", "Plumber", "Electrician", "Delivery"];
         
-        // Select all h2 elements inside the circles
-        const h2Elements = document.querySelectorAll('.circle h2');
+        // Function to generate card views dynamically
+        function generateCards() {
+            const container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear existing content
+            
+            serviceNames.forEach((serviceName, index) => {
+                // Create card element
+                const card = document.createElement('div');
+                card.classList.add('card');
 
-        // Iterate through the h2 elements and replace their text with service names
-        h2Elements.forEach((element, index) => {
-            element.textContent = serviceNames[index];
-        });
+                // Create circle element
+                const circle = document.createElement('div');
+                circle.classList.add('circle');
+                circle.innerHTML = `<h2>${serviceName}</h2>`;
+
+                // Create content element
+                const content = document.createElement('div');
+                content.classList.add('content');
+                content.innerHTML = `
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button class="book-now-button" data-service="${serviceName}">Book Now</button>
+                `;
+
+                // Append circle and content to card
+                card.appendChild(circle);
+                card.appendChild(content);
+
+                // Append card to container
+                container.appendChild(card);
+
+                // Add click event listener to the button
+                const button = content.querySelector('.book-now-button');
+                button.addEventListener('click', () => {
+                    localStorage.setItem('service', serviceName);
+                    window.location.href = 'karthikeyan.html';
+                });
+            });
+        }
+
+        // Call the function to generate cards when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', generateCards);
     </script>
 </body>
 </html>

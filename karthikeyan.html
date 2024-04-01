@@ -1,149 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title"></title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        /* Your CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fff;
+            background-attachment: fixed;
+        }
+
+        .container {
+            position: relative;
+            width: 1150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container .card {
+            position: relative;
+            width: 250px;
+            height: 320px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        .container:hover .card {
+            filter: blur(0px);
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .container .card:hover {
+            filter: blur(0px);
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .container .card .circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            clip-path: circle(180px at center 0);
+            text-align: center;
+        }
+
+        .container .card .circle h2 {
+            color: #fff;
+            font-size: 4.5em;
+            padding: 30px 0;
+        }
+
+        .container .card .content {
+            position: absolute;
+            bottom: 10px;
+            padding: 20px;
+            page-break-after: 20px;
+            text-align: center;
+        }
+
+        .container .card .content p {
+            color: #666;
+        }
+
+        .container .card .content a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .container .card:nth-child(1) .circle,
+        .container .card:nth-child(1) .content a {
+            background: #141414;
+        }
+
+        .container .card:nth-child(2) .circle,
+        .container .card:nth-child(2) .content a {
+            background: #0a0a0a;
+        }
+
+        .container .card:nth-child(3) .circle,
+        .container .card:nth-child(3) .content a {
+            background: #000000;
+        }
+    </style>
+    <title>Responsive Cards</title>
 </head>
-<style>
-    html,body{
-        font-family: 'Roboto';
-        width: 100%;
-        height: 100%;
-        padding: 0px;
-        margin: 0px;
-    }
-    .main{
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        width: 100%;
-        height: 100%;
-    }
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: start;
-        background-color: #4682B4;
-        align-items: center;
-        height: 100%; /* Set the height of the <ul> to 100% */
-    }
-
-    nav ul li {
-        display: flex;
-        margin-left: 10px;
-        height: 100%; /* Set the height of the <li> to 100% */
-        align-items: center;
-        justify-self: center;
-    }
-
-    nav li h1 {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    
-    nav {
-        height: 100px; /* Example height, adjust as needed */
-        position: fixed;
-        width: 100%;
-    }
-    nav, nav ul, nav ul li {
-        box-sizing: border-box;
-    }
-
-    nav li a:hover {
-        background-color: #111;
-    }   
-    .content{
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        background-color: #e6ccff;
-        height: 100vh;
-    }
-    .list{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        background: white;
-        margin-top: 150px;
-        height: 100%;
-    }
-    .item{
-        display: flex;
-        margin: 10px;
-        flex-direction: column;
-        justify-content: center;
-        width: 90%;
-    }
-</style>
 <body>
-    <div class="main" >
-        <div class="nav">
-            <nav>
-                <ul>
-                    <li><h1 id="heading"></h1></li>
-                    <li>
-                        <div>
-                            <div>subtitle</div>
-                            <div>descritpion</div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <div class="content">
-                <div class="list" id="list">
-                </div>
-            </div>
-        </div>
+    <h1 id="serviceHeading">Service Name</h1>
+    <div class="container">
+        <!-- Card views will be dynamically added here -->
     </div>
+
     <script>
-        localStorage.setItem("service","Electritian");
+        // Function to generate random job
         function getRandomJob() {
-            var jobs = ["electrician", "plumber", "carpenter", "mechanic", "chef", "teacher", "doctor", "nurse", "artist", "engineer"];
+            var jobs = ["10", "7", "5", "12", "13", "16", "90", "9", "artist", "engineer"];
             return jobs[Math.floor(Math.random() * jobs.length)];
         }
+        
+        // Function to generate random qualification
         function getRandomQualification() {
             var qualifications = ["Diploma", "Bachelor's Degree", "Master's Degree", "PhD", "Certification", "None"];
             return qualifications[Math.floor(Math.random() * qualifications.length)];
         }
-        var list=[]
-        for (var i = 0; i < 10; i++) {
-            var newUser = {
-                name: "user" + (i + 2), // Start from user2
-                job: getRandomJob(),
-                description: "Random description " + (i + 2),
-                qualification: getRandomQualification()
-            };
-            list.push(newUser);
-        }
-        window.onload=()=>{
-            var savedData=localStorage.getItem("service")
-            document.title=savedData;
-            console.log(savedData)
-            document.getElementById("heading").textContent=savedData;
-            var box=document.getElementById("list");
-            list.forEach((item)=>{
-                var child=document.createElement("div")
-                child.classList.add("item")
-                child.textContent=item.name;
-                box.appendChild(child)
-                console.log(item)
-            })
-        }
+        
+        // Generate a list of users with random jobs and qualifications
+      // Generate a list of users with random jobs and qualifications
+var list = [];
+var letters = '0123456789ABCDEF';
+for (var i = 0; i < 10; i++) {
+    var color = '#';
+    for (var j = 0; j < 6; j++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    var newUser = {
+        name: "user " + (i + 2), // Start from user2
+        job: getRandomJob(),
+        description: "Random description " + (i + 2),
+        qualification: getRandomQualification(),
+        color: color // Assign color separately
+    };
+    list.push(newUser);
+}
+
+        
+        
+        // Update the service heading dynamically based on the selected service
+       // Update the service heading dynamically based on the selected service
+window.onload = () => {
+    var savedData = localStorage.getItem("service");
+    document.title = savedData;
+    console.log(savedData);
+    
+    // Update the service heading
+    const serviceHeading = document.getElementById('serviceHeading');
+    serviceHeading.textContent = savedData;
+    
+    // Populate the container with card views
+    var container = document.querySelector(".container");
+    list.forEach((item) => {
+        var card = document.createElement("div");
+        card.classList.add("card");
+
+        var circle = document.createElement("div");
+        circle.classList.add("circle");
+        circle.style.backgroundColor = item.color; // Assigning the color here
+        circle.innerHTML = "<h2>" + item.name + "</h2>";
+
+        var content = document.createElement("div");
+        content.classList.add("content");
+        content.innerHTML = "<p>Working hours: " + item.job + "</p><a href='#'>book now</a>";
+
+        card.appendChild(circle);
+        card.appendChild(content);
+
+        container.appendChild(card);
+    });
+};
+
     </script>
 </body>
 </html>

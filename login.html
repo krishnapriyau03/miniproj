@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service App</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link rel="stylesheet" href="/css">
-</head>
-<style>
-  .background{
-    background-image: url('C:\Users\minik\Downloads\miniproject\WhatsApp Image 2024-03-28 at 10.50.33_ad9df2ab.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-</style>
-<body class="background">
-  <div class="container">
-    <header>
-      <h1>CONNECTME</h1>
-    </header>
-    <main>
-      <form id="loginForm" >
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
-        <div class="cont2">
-        <button id="mybutton">LOGIN</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <title>Connectme</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
         
-        <button id="signin">SIGNIN</button>
+        <header>
+            <h2 class="connectme">CONNECTME</h2>
+            <nav class="navigation">
+                <a href="login.html">Home</a>
+                <a href="About.html">About</a>
+                
+                <a href="contact.html">Contact</a>
+
+                <button class="btnlogin-popup">login</button>
+            </nav>
+        </header>
+
+        <div class="wrapper">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#">Forgot Password</a>
+                     </div>
+                     <button type="submit" class="btn">Login</button>
+                     <div class="login-register">
+                        <p> Don't have an account?
+                            <a href="#" class="register-link">Register</a>
+                        </p>
+                     </div>
+
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Username</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        
+                        
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                        
+                     </div>
+                     <button type="submit" class="btn">Register</button>
+                     <div class="login-register">
+                        <p> Already have an account?
+                            <a href="#" class="login-link">Login</a>
+                        </p>
+                     </div>
+
+                </form>
+            </div>
+
         </div>
-        <h2>Dont have an account? Then plz SIGNIN!</h2>
-      </form>
-    </main>
-  </div>
-  <!DOCTYPE html>
-  <script>
-  document.getElementById("mybutton").addEventListener("click", function() {
-    // Replace 'destination.html' with the URL of the page you want to redirect to
-    window.location.href = "/option";
-});
-</script>
-</body>
+
+
+         
+        <script src="script.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
 </html>
